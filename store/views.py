@@ -11,11 +11,13 @@ def cart(request):
     #! IMPORTANT PART
     if request.user.is_authenticated:
         customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, complete = False) # TODO: Need to fix this 
-        items = order.order_item_set.all()  # TODO: Need to fix this 
+        order, created = Order.objects.get_or_create(customer=customer, complete = False) #* Good Part
+        items = order.order_item_set.all()  #* Good Part
     else:
         items = []
-    context = {'items':items}
+        order = {'get_cart_total':0, 'get_cart_items':0}
+
+    context = {'items':items, 'order':order}
     return render(request, 'store/cart.html', context)
 
 def checkout(request):
