@@ -53,6 +53,7 @@ def updateItem(request):
     data = json.loads(request.body)
     productId = data['productId']
     action = data['action']
+
     print('Action:', action)
     print('productId', productId)
 
