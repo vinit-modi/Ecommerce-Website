@@ -13,6 +13,7 @@ class Customer(models.Model):
 class Product(models.Model):
     name = models.CharField(null = True, max_length=100)
     price = models.FloatField()
+    mrp = models.FloatField(null = True)
     image = models.ImageField(null = True, blank = True)
 
     def __str__(self):
@@ -26,6 +27,11 @@ class Product(models.Model):
             url = ' '
         return url
 
+    @property
+    def percentile(self):
+        percentage = 100 - ((self.price/self.mrp)*100)
+        return str(percentage)
+    
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null = True, blank = True)
     date_ordered = models.DateTimeField(auto_now_add=True)
@@ -57,6 +63,7 @@ class Order_Item(models.Model):
     def get_total(self):
         total = self.Product.price * self.quantity
         return total
+    
 
 
 class ShippingAddress(models.Model):

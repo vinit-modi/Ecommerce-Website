@@ -12,14 +12,17 @@
 <body>
     <div class="row">
         {% for product in products %}
-        <div class="col-lg-4">
+        <div class="col-9 col-sm-6 col-md-6 col-lg-3">
             <img class="thumbnail" src="{{ product.imageURL }}">
+            <div class="text-block">
+                <p id="over-image">{{product.percentile|floatformat:1}} % off</p>
+              </div>
             <div class="box-element product">
                 <h6><strong>{{ product.name }}</strong></h6>
                 <hr>
-                <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>₹{{ product.price|floatformat:2 }}</strong></h4>
+                <button data-product={{product.id}} data-action="add" class="add-cart-btn btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				<!-- <a class="btn btn-outline-success" href="#">View</a> -->
+				<h5 style="display: inline-block; float: right"><strong>₹{{ product.price|floatformat:1 }}</strong></h5>
             </div>
         </div>
         {% endfor %}

@@ -20,6 +20,13 @@ def store(request):
     context = {'products':products, 'cartItems':cartItems}
     return render(request, 'store/store.html', context)
 
+def aboutus(request):
+    customer = request.user.customer
+    order, created = Order.objects.get_or_create(customer=customer, complete = False) 
+    cartItems = order.get_cart_items
+    context = {'cartItems':cartItems}
+    return render(request, 'store/aboutus.html', context)
+
 def cart(request):
     #! IMPORTANT PART
     if request.user.is_authenticated:
