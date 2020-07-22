@@ -1,6 +1,6 @@
-body{
+/* body{
 	background-color: hsl(0, 0%, 98%);
-}
+} */
 
 html{
 	scroll-behavior: smooth;
@@ -26,6 +26,9 @@ h1,h2,h3,h4,h5,h6{
 	box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
 }
 
+.google-map{
+	border-radius: 5px;
+}
 
 #over-image{
 	position: absolute;
