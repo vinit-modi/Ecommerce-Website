@@ -2,6 +2,10 @@ body{
 	background-color: hsl(0, 0%, 98%);
 }
 
+html{
+	scroll-behavior: smooth;
+}
+
 h1,h2,h3,h4,h5,h6{
 	color:hsl(0, 0%, 30%);
 }
@@ -22,6 +26,7 @@ h1,h2,h3,h4,h5,h6{
 	box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
 }
 
+
 #over-image{
 	position: absolute;
   	bottom: 83%;
@@ -33,6 +38,30 @@ h1,h2,h3,h4,h5,h6{
 	padding-right: 10px;
 	margin-bottom: 17px;
 	border-radius: 0%;
+}
+
+#over-image:hover{
+	display: none;
+}
+
+.navbar-img{
+	width: 40px;
+	margin-right: 5px;
+	margin-bottom: -10px;
+	margin-top: -15px;
+}
+
+.navbar-brand{
+	font-weight: 500;
+	font-size: 20px;
+}
+
+.nav-name:hover{
+	color: #FFC107;
+}
+
+.cart-item, .cart-price, .cart-total, .ship-info, .checkout-name, .checkout-price, .checkout-quantity{
+	font-weight: 500;
 }
 
 .col-9, .col-md-6 {
@@ -69,8 +98,43 @@ h1,h2,h3,h4,h5,h6{
 	margin-top: 10px;
 }
 
+#myBtn {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 10px;
+	z-index: 99;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: #FFC107;
+	color: black;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 4px;
+  }
+  
+  #myBtn:hover {
+	background-color: #003542;
+	color: white;
+  }
+
 .btn{
 	border-radius: 5;
+	font-weight: 500;
+}
+
+.add-cart-btn, .back-main, .back-cart{
+	color: black;
+	/* border-radius: 50px; */
+}
+
+.add-cart-btn:hover, .back-main:hover, .back-cart:hover, .checkout-btn:hover, .btn-continue:hover{
+	background-color: #003542;
+}
+
+{
+	background-color: #003542;
 }
 
 .row-image{

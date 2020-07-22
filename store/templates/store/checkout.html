@@ -24,7 +24,7 @@
                     </div>
                     <div id="shipping-info">
                         <hr>
-						<p>Shipping Information:</p>
+						<p class="ship-info">Shipping Information:</p>
 						<hr>
 						<div class="form-field">
 							<input class="form-control" type="text" name="address" placeholder="Address">
@@ -43,7 +43,7 @@
 						</div>
                     </div>
                     <hr>
-                    <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+                    <input id="form-button" class="btn btn-success btn-block btn-continue" type="submit" value="Continue">
                 </form>
             </div>
             <br>
@@ -55,16 +55,16 @@
 
         <div class="col-lg-6">
             <div class="box-element summary">
-                <a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+                <a  class="btn btn-outline-dark back-cart" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
 				<hr>
 				<h3>Order Summary</h3>
 				<hr>
 				{% for item in items %}
 				<div class="cart-row">
 					<div style="flex:2"><img class="row-image" src="{{ item.Product.imageURL }}"></div>
-					<div style="flex:2"><p>{{ item.Product.name }}</p></div>
-					<div style="flex:1"><p>₹{{ item.Product.price|floatformat:1 }}</p></div>
-					<div style="flex:0.5"><p>x{{ item.quantity }}</p></div>
+					<div class="checkout-name" style="flex:2"><p>{{ item.Product.name }}</p></div>
+					<div class="checkout-price" style="flex:1"><p>₹{{ item.Product.price|floatformat:1 }}</p></div>
+					<div class="checkout-quantity" style="flex:0.5"><p>x{{ item.quantity }}</p></div>
 				</div>
 				{% endfor %}
 				<h5>Items: {{ order.get_cart_items }}</h5>
