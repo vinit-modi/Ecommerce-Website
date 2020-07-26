@@ -13,19 +13,18 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <div class="row">
         {% for product in products %} <!-- |slice:":8" -->
-        <div class="col-6 col-sm-6 col-md-3 col-lg-2">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
             <img class="thumbnail" src="{{ product.imageURL }}">
             <div class="text-block">
                 <p id="over-image">{{product.percentile|floatformat:1}} % off</p>
               </div>
             <div class="box-element product">
-                <h6><strong>{{ product.name }}</strong></h6>
+                <h6 id="product-name"><strong>{{ product.name }}</strong></h6>
                 <hr>
                 <h5 style="display: inline-block; float: left"><strong>₹{{ product.price|floatformat:1 }}</strong></h5>
                 <h6 class="mrp-strike" style="display: inline-block; float: right"><strong>₹{{ product.mrp|floatformat:0 }}</strong></h6>
-                <button data-product={{product.id}} data-action="add" class="add-cart-btn btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                <button data-product={{product.id}} data-action="add" class="add-cart-btn btn btn-outline-secondary btn-block update-cart">Add to Cart</button>
 				<!-- <a class="btn btn-outline-success" href="#">View</a> -->
-				
             </div>
         </div>
         {% endfor %}

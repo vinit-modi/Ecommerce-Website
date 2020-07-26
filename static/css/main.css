@@ -137,6 +137,10 @@ h1,h2,h3,h4,h5,h6{
 	font-weight: 500;
 }
 
+.add-cart-btn{
+	position: relative;
+}
+
 .add-cart-btn, .back-main, .back-cart{
 	color: black;
 	/* border-radius: 50px; */
