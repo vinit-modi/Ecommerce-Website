@@ -16,7 +16,7 @@ def store(request):
         order = {'get_cart_total':0, 'get_cart_items':0}
         cartItems = order['get_cart_items']
 
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('name')
     context = {'products':products, 'cartItems':cartItems}
     return render(request, 'store/store.html', context)
 
